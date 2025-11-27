@@ -1,4 +1,4 @@
-import { query } from "../db/pool";
+import { query } from "../config/db/pool";
 
 export type StaffRow = {
   id: number;

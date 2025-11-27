@@ -2,4 +2,57 @@
 GET http://localhost:4000/
 ###
 
-GET http://localhost:8000/
+POST http://localhost:4000/api/auth/customer/signup
+Content-Type: application/json
+
+{
+    "username": "vesc2o",
+    "email":"mohamedibrahimalialisaad@gmail.com",
+    "password":"nice"
+}
+###
+
+POST http://localhost:4000/api/auth/customer/verfiyotp
+Content-Type: application/json
+
+{
+    "email":"mohamedibrahimalialisaad@gmail.com",
+    "otp":"97247365"
+}
+###
+
+POST http://localhost:4000/api/auth/customer/resendotp
+Content-Type: application/json
+
+{
+   "email":"mohamedibrahimalialisaad@gmail.com"
+}
+
+
+###
+
+###
+
+POST http://localhost:4000/api/auth/customer/login
+Content-Type: application/json
+
+{
+    "email":"mohamedibrahimalialisaad@gmail.com",
+    "password":"helloworld"
+}
+###
+POST http://localhost:4000/api/auth/customer/logout
+Content-Type: application/json
+
+{
+    "refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkiLCJ0eXBlIjoiY3VzdG9tZXIiLCJpYXQiOjE3NjQyMjgxMjEsImV4cCI6MTc2NDgzMjkyMX0.jKmTsDbDpgs2_4JKNuJzj9wf2xS8e_xZXBEZ1uLcJtE"
+}
+###
+POST http://localhost:4000/api/auth/customer/changePass
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkiLCJ0eXBlIjoiY3VzdG9tZXIiLCJpYXQiOjE3NjQyMjg3ODQsImV4cCI6MTc2NDIyOTY4NH0.rtBZeUJ0YG5fjr6xoiK6Cnu3lgYOggKCe-XMm8F38d4
+
+{
+    "oldPassword":"nice",
+    "newPassword":"helloworld"
+}

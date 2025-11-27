@@ -1,8 +1,8 @@
 import express, { Request, Response } from "express";
 import dotenv from "dotenv";
-import { connectDB } from "./db/pool";
+import { connectDB } from "./config/db/pool";
 import { applyMiddleware } from "./middleware/initalizationMiddleware";
-import Auth from "./routes/authRoutes";
+import Auth from "./modules/Auth/auth.route";
 // configuration
 dotenv.config();
 connectDB();
@@ -10,7 +10,7 @@ const app = express();
 applyMiddleware(app);
 
 // routes
-app.get("/", (_req: Request, res: Response) => {
+app.get("/", (req: Request, res: Response) => {
   res.send("Hello from Qatar");
 });
 app.use("/api/auth/customer", Auth);

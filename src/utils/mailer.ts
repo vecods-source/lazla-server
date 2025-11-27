@@ -28,11 +28,3 @@ export const sendMail = async (to: string, subject: string, html: string) => {
     html,
   });
 };
-
-export const sendOtpEmail = async (to: string, otp: string) => {
-  const html = `
-    <p>Your verification OTP is: <b>${otp}</b></p>
-    <p>This OTP will expire in 10 minutes.</p>
-  `;
-  return sendMail(to, "Your Verification OTP", html);
-};
